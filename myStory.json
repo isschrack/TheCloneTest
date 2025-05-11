@@ -1,58 +1,189 @@
 {
-    "Title": "Campus Life on the West Side",
-    "Credits": "Created by Adam Smith (amsmith@ucsc.edu).",
-    "InitialLocation": "Kresge",
+    "Title": "The Clone Test",
+    "Credits": "Created by Izzy Schrack (ischrack@ucsc.edu).",
+    "InitialLocation": "WakeUp",
+    "Password": false,
+    "Password1": false,
     "Locations": {
-        "Kresge": {
-            "Body": "This is Kresge College, lots of nice trees.",
-            "Choices": [
-                {
-                    "Text": "South",
-                    "Target": "Porter"
-                }
+      "WakeUp": {
+        "Body": "You awaken to harsh fluorescent lights blazing above you. You’re in a hospital bed, wires snaking from your body into flickering monitors. You can't remember who you are, or how you got here. The room is still.\n\nYou sit up and remove the electrodes. As you walk past a metal counter, you glimpse your reflection—blank, unfamiliar. You leave the room. The hallway ahead splits in two: the left side glows under working lights; the right side is shrouded in darkness.\n\nWhich way will you go?",
+        "Choices": [
+          {
+            "Text": "Go left",
+            "Target": "Light Hall"
+          },
+          {
+            "Text": "Go right",
+            "Target": "Dark Hall"
+          }
+        ]
+      },
+      "Light Hall": {
+        "Body": "You walk toward the light. The hall is sterile and empty. At the end is a sealed door.",
+        "Choices": [
+          {
+            "Text": "Open the door",
+            "Target": "Office"
+          }
+        ]
+      },
+      "Office": {
+        "Body": "This office once belonged to a researcher. There’s a PC on the desk and whiteboards covered in cryptic diagrams and notes. You sense this room holds answers.",
+        "Choices": [
+          {
+            "Text": "Look at the PC",
+            "Target": [
+              "locked",
+              "unlocked"
             ]
-        },
-        "Porter": {
-            "Body": "This is Porter College, the trees are nice here too.",
-            "Choices": [
-                {
-                    "Text": "North",
-                    "Target": "Kresge"
-                },
-                {
-                    "Text": "South",
-                    "Target": "Rachel Carson"
-                }
-            ]
-        },
-        "Rachel Carson": {
-            "Body": "Rachel Carson College, more sun and fewer trees.",
-            "Choices": [
-                {
-                    "Text": "North",
-                    "Target": "Porter"
-                },
-                {
-                    "Text": "South",
-                    "Target": "Oakes"
-                }
-            ]
-        },
-        "Oakes": {
-            "Body": "Oakes College, even the buildings have tree bark on them.",
-            "Choices": [
-                {
-                    "Text": "North",
-                    "Target": "Rachel Carson"
-                },
-                {
-                    "Text": "South",
-                    "Target": "Beyond"
-                }
-            ]
-        },
-        "Beyond": {
-            "Body": "Grass, don't forget to check for ticks!"
-        }
+          },
+          {
+            "Text": "Look at the whiteboards",
+            "Target": "Whiteboards"
+          }
+        ]
+      },
+      "Whiteboards": {
+        "Body": "Most of the whiteboard content is technical gibberish. But in the bottom corner, a different handwriting scrawls:\n\n\"C-7... the only one to escape. Voss is hiding something.\"\n\nThis might be the clue you need.",
+        "Choices": [
+          {
+            "Text": "Go back",
+            "Target": "Office"
+          }
+        ]
+      },
+      "Dark Hall": {
+        "Body": "The darkness ahead is absolute. You take a few steps, but without a light source, it’s too dangerous to continue.",
+        "Choices": [
+          {
+            "Text": "Go back",
+            "Target": "Light Hall"
+          }
+        ]
+      },
+      "Dark Hall Lit": {
+        "Body": "The backup lights are now on, but the faint glow only amplifies the silence. As you step forward, you find a door at the end of the corridor. Feeling along the wall, you locate a switch.",
+        "Choices": [
+          {
+            "Text": "Turn on the light",
+            "Target": "Incubator Intro"
+          }
+        ]
+      },
+      "Incubator Intro": {
+        "Body": "The overhead lights buzz to life. What you see chills you: rows of incubation tanks line the walls, each one containing... you. Copies of yourself, suspended in eerie blue liquid.\n\nWhat is this place?",
+        "Choices": [
+          {
+            "Text": "Look around",
+            "Target": "Incubator Room"
+          }
+        ]
+      },
+      "Incubator Room": {
+        "Body": "You take a deep breath and step into the room. There’s a heavy door on the far side — fortified and sealed. Something tells you it’s important.\n\nBetween the rows of tanks, one catches your eye. Its glass is broken.",
+        "Choices": [
+          {
+            "Text": "Examine incubators",
+            "Target": "C-5"
+          },
+          {
+            "Text": "Examine door",
+            "Target": "Strong Door Check"
+          }
+        ]
+      },
+      "C-5": {
+        "Body": "You approach the shattered incubator. Its glass is blown inward. A slumped figure — a clone — lies lifeless inside. On the tank wall, written in blood:\n\n\"Door 3C — Code 4187. Don’t trust Voss.\"\n\nA handprint smears down below the writing.\n",
+        "Choices": [
+          {
+            "Text": "Go back",
+            "Target": "Incubator Room"
+          }
+        ]
+      },
+      "Strong Door Check": {
+        "Body": "You step up to the fortified door. A keypad awaits input.",
+        "Choices": [
+          {
+            "Text": "Enter Code",
+            "Target": "Strong Door1"
+          },
+          {
+            "Text": "Leave",
+            "Target": "Incubator Room"
+          }
+        ]
+      },
+      "Strong Door1": {
+        "Body": "You punch in 4187. The door unlocks with a hiss. Beyond it is a sterile chamber containing a terminal and one final chamber marked 'BIO-ARCHIVE - SUBJECT C-7'.",
+        "Choices": [
+          {
+            "Text": "Approach terminal",
+            "Target": "Final Terminal"
+          }
+        ]
+      },
+      "Strong Door2": {
+        "Body": "You put in a bunch of random numbers, but all you get is a loud beep. The door remains locked.",
+        "Choices": [
+          {
+            "Text": "Go back",
+            "Target": "Incubator Room"
+          }
+        ]
+      },
+      "Final Terminal": {
+        "Body": "The terminal flickers on. A prompt asks for clone number.\n\nYou type: C-7.\n\nFiles load. One video stands out. It shows a clone — you — escaping, showing emotion, memories, resistance. Notes say: \"Subject C-7 terminated experiment. All remaining clones to be purged.\"\n\nYou are C-7. You were never meant to live. But you did.\n\nBehind you, a voice: \"You're not supposed to be here.\"\n\nYou turn around.",
+        "Choices": [
+          {
+            "Text": "Turn around",
+            "Target": "Ending"
+          },
+          {
+            "Text": "Hide behind the terminal",
+            "Target": "Hide Ending"
+          },
+          {
+            "Text": "Attack the voice",
+            "Target": "Fight Ending"
+          }
+        ]
+      },
+      "Ending": {
+        "Body": "Standing there is Dr. Voss, holding a tranquilizer gun. \"You’re a glitch in the system,\" he says. You take a step back.\n\nBut you’re not just a clone. You *remember*. You *feel*. You *escaped*.\n\nThis isn't the end.\n\nIt's your beginning.",
+        "Choices": []
+      },
+      "unlocked": {
+        "Body": "You enter the password found on the whiteboard. The PC unlocks and opens a confidential file:\n\n\"Subject C-7 exhibited unusual behavior within 72 hours of activation, including unprompted speech, emotional awareness, and apparent memory fragments not present in the original donor’s profile. Notable phrases included “Where are the others?” and “I remember things that never happened.” On Day 4, C-7 accessed Maintenance Corridor B using an unauthorized code and disappeared; tracking signals ceased near the Bio-Archive. Recommend suspension of further clone trials pending investigation.\"\nAs you're reading the file, you hear a sudden buzzing sound off in distance, like a generator has turned on.  Could something have happened in the dark hall?",
+        "Choices": [
+          {
+            "Text": "Explore other hallway",
+            "Target": "Dark Hall Lit"
+          }
+        ]
+      },
+      "locked": {
+        "Body": "The computer is locked. You'll need a password to see what's on it.",
+        "Choices": [
+          {
+            "Text": "Go back",
+            "Target": "Office"
+          }
+        ]
+      },
+
+      "Hide Ending": {
+        "Body": "You dive behind the terminal, heart pounding. Dr. Voss enters slowly, scanning the room. \"I know you're here,\" he mutters.\n\nYou stay perfectly still. He walks past you, closer to the archive chamber. Seizing the moment, you slip out silently.\n\nYou sprint through the complex, following emergency signs to an exit. As sunlight touches your skin, a strange sensation stirs. Freedom. Survival.\n\nYou don't have all the answers yet—but you’re alive. And that’s enough. For now.",
+        "Choices": []
+      },
+
+      "Fight Ending": {
+        "Body": "You lunge at the voice, catching him off guard.  It's Dr. Voss! The tranquilizer gun clatters to the floor.\n\nYou shout, \"I'm not just a clone!\" as the two of you struggle. A burst of strength surges through you — adrenaline? Instinct? Either way, you overpower him.\n\nVoss lies unconscious. You access the terminal again, pulling up the purge protocols. You cancel them.\n\nYou set the others free. As the incubators hiss open and figures stir awake, you realize you’ve started something bigger than yourself.\n\nA revolution of identity has begun.",
+        "Choices": []
+      }
+
+
     }
-}
+  }
+  
+  
